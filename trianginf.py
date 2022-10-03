@@ -10,5 +10,5 @@ def trianginf(T, b):
         S = 0
         for k in range(1, i-1):
             S += T[i][k] * x[k]
-        x[i] = b[i] - S / T[i][i]
+        x[i] = (b[i] - S) / T[i][i]
     return x
