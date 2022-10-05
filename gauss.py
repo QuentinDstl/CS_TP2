@@ -1,4 +1,4 @@
-from numpy import zeros,array
+from numpy import size, zeros,array
 
 
 def gauss(A,b):
@@ -10,18 +10,20 @@ def gauss(A,b):
     m=zeros((n,n))
     #Triangulation de la matrice
     for k in range(0,n-1):
-        for i in range(k,n):
+        for i in range(k+1,n):
             m[i][k]=A[i][k]/A[k][k]
+            #print(m[i][k])
             for j in range(k,n):
                 A[i][j]=A[i][j]-m[i][k]*A[k][j]
             b[i]=b[i]-m[i][k]*b[k]
     #Resolution du syteme triangulaire superieur
-    #x[n]=A[n][n]/A[n][n]
-    for p in range(n-2,1):
-        for m in range(p,n):
-            S+=A[p][m]*x[m]
+    x[n-1]=b[n-1]/(A[n-1][n-1])
+    for p in range(n-2,-1,-1):
+        for l in range(p+1,n):
+            S+=A[p][l]*x[l]
         x[p]=(b[p]-S)/(A[p][p])
+        S=0
     return x
 
-x=gauss(array([[2,4,3,5],[-4,-7,-5,-8],[6,8,2,9],[4,9,-2,14]]), array([[2,4,3,5]]))
+x=gauss(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
 print(x)
