@@ -6,11 +6,16 @@ def triangsup(T,b):
     #b est le vecteur second membre
     n=len(b)
     x=zeros(n)
-    x[n]=b[n]/T[n][n]
-    for i in range(n-1,1):
+    x[n-1]=b[n-1]/T[n-1][n-1]
+    for i in range(n-2,-1,-1):
         S=0
         for k in range(i+1,n):
             S+=T[i][k]*x[k]
         x[i]=(b[i]-S)/T[i][i]
     return x
+
+
+
+x=triangsup(array([[1,1,-1],[0,-3,3],[0,0,4]]), array([-2, 9, 8]))
+print(x)
     
