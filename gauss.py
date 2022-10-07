@@ -1,9 +1,18 @@
-from numpy import size, zeros,array
+from numpy import size, zeros,array,linalg,dot
 
+def HasZerosOnDiag(A):
+    n = len(A[0])
+    for i in range(n):
+        if A[i][i] == 0:
+            return True
+    return False
 
 def gauss(A,b):
     #A est la matrice principale
     #b est le vecteur second memebre
+    if(HasZerosOnDiag(A)):
+        raise Exception("A has zeros on diagonal")
+    
     S=0
     n=len(b)
     x=zeros(n)
@@ -25,5 +34,21 @@ def gauss(A,b):
         S=0
     return x
 
+#test matrice inverse
+def matinv(A,b):
+    if(HasZerosOnDiag(A)):
+        raise Exception("A has zeros on diagonal")
+    
+    n=len(b)
+    x=zeros(n)
+    C=linalg.inv(A)
+    for i in range(0,n):
+        S=0
+        for j in range(0,n):
+            S+=C[i][j]*b[j]
+        x[i]=S
+    return x
+
 x=gauss(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
+#x=matinv(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
 print(x)
