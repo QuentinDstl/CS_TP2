@@ -16,6 +16,6 @@ def triangsup(T,b):
 
 
 
-x=triangsup(array([[1,1,-1],[0,-3,3],[0,0,4]]), array([-2, 9, 8]))
+x=triangsup(array([[4,0,0],[3,-3,0],[-1,1,1]]), array([8, 9, -2]))
 print(x)
     
