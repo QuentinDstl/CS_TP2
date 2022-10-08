@@ -1,7 +1,18 @@
 from numpy import size, zeros,array,linalg,dot
 from math import *
 
+def IsSymmetrical(A):
+    n=len(A[0])
+    for i in range(0,n):
+        for j in range(0,n):
+            if A[i][j]!=A[j][i]:
+                return False
+    return True
+
 def cholesky(A):
+    if(IsSymmetrical(A)):
+        raise Exception("A is not symmetrical")
+
     n=len(A[0])
     C=zeros((n,n))
     C[0][0]=sqrt(A[0][0])
@@ -19,7 +30,6 @@ def cholesky(A):
                 S+=C[l][m]*C[j][m]
             C[l][j]=(A[l][m]-S)
     return C
-
 
 C=cholesky(array([[15,10,18,12],[10,15,7,13],[18,7,27,7],[12,13,7,22]]))
 print(C)
