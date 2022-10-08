@@ -1,4 +1,4 @@
-function trianginf(A::Matrix{Number}, b::Vector{Number})
+function triangInf(A::Matrix{T}, b::Vector{T}) where T <: Number
     n = size(A, 1)
     x = zeros(n)
     x[1] = b[1] / A[1, 1]
@@ -11,7 +11,3 @@ function trianginf(A::Matrix{Number}, b::Vector{Number})
     end
     return x
 end
-
-A = [1. 2. 3.; 1. 2. 4.; 2. 2. 2.]
-b = [1., 2., 3.]
-print(trianginf(A, b))
