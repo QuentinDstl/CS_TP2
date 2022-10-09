@@ -9,5 +9,5 @@ def lusolve(A,b):
    x=triangsup(U,y)
    return x
 
-x=lusolve(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
-print(x)
+# x=lusolve(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
+# print(x)

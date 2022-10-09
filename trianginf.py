@@ -13,6 +13,5 @@ def trianginf(T, b):
         x[i] = (b[i] - S) / T[i][i]
     return x
 
-
-x=trianginf(array([[4,0,0],[3,-3,0],[-1,1,1]]), array([8,9,-2]))
-print(x)
+# x=trianginf(array([[4,0,0],[3,-3,0],[-1,1,1]]), array([8,9,-2]))
+# print(x)

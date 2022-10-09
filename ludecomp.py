@@ -30,8 +30,7 @@ def ludecomp(A):
                 U[k][j] = U[k][j] - mu*U[i][j]
     return [L,U]
 
-[L,U] = ludecomp(array([[7, 3, -1, 2], [3, 8, 1, -4], [-1, 1, 4, -1], [2, -4, -1, 6]]))
-
-print(L)
-print(U)
-print(dot(L,U))
+# [L,U] = ludecomp(array([[7, 3, -1, 2], [3, 8, 1, -4], [-1, 1, 4, -1], [2, -4, -1, 6]]))
+# print(L)
+# print(U)
+# print(dot(L,U))
