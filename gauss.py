@@ -49,6 +49,6 @@ def matinv(A,b):
         x[i]=S
     return x
 
-# x=gauss(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
-#x=matinv(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
-# print(x)
+x=gauss(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
+x=matinv(array([[1,1,-1],[2,-1,1],[-1,2,2]]), array([-2, 5, 1]))
+print(x)
